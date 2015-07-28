@@ -1,5 +1,6 @@
 // see:
 // https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/hotkeys
+// https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/simple-prefs
 // https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/tabs
 // https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/windows#BrowserWindow
 
