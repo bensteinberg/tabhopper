@@ -1,0 +1,20 @@
+{
+    "title": "Tabhopper",
+    "name": "tabhopper",
+    "version": "0.0.1",
+    "description": "A basic add-on for moving quickly through tabs",
+    "main": "index.js",
+    "author": "Ben Steinberg <ben@potswift.org>",
+    "engines": {
+	"firefox": ">=38.0a1",
+	"fennec": ">=38.0a1"
+    },
+    "license": "MPL 2.0",
+    "preferences": [{
+	"name": "tabhopperHop",
+	"title": "Hop value",
+	"description": "How many tabs to hop",
+	"type": "integer",
+	"value": 5
+    }]
+}
