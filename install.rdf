@@ -5,7 +5,7 @@
           <em:type>2</em:type>
           <em:bootstrap>true</em:bootstrap>
           <em:unpack>false</em:unpack>
-          <em:version>0.0.1</em:version>
+          <em:version>0.0.2</em:version>
           <em:name>Tabhopper</em:name>
           <em:description>A basic add-on for moving quickly through tabs</em:description>
           <em:creator>Ben Steinberg &lt;ben@potswift.org&gt;</em:creator>
