@@ -28,11 +28,18 @@ function hopTabs(direction) {
     if (direction == "down") {
 	hop = -hop;
     }
-    var nextTab = window.tabs.activeTab.index + hop;
-    if (nextTab >= window.tabs.length) {
-	nextTab = window.tabs.length - 1;
+    var positions = [];
+    var flag = false;
+    for (let tab of window.tabs) {
+	positions.push(tab.index);
+    }
+    var nextTab = positions.indexOf(window.tabs.activeTab.index) + hop;
+    if (nextTab >= positions.length) {
+	nextTab = positions[-1];
     } else if (nextTab < 0) {
-	nextTab = 0;
+	nextTab = positions[0];
     }
     window.tabs[nextTab].activate();
 }
+
+exports.hopTabs = hopTabs;
