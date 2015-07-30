@@ -1,7 +1,7 @@
 {
     "title": "Tabhopper",
     "name": "tabhopper",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A basic add-on for moving quickly through tabs",
     "main": "index.js",
     "author": "Ben Steinberg <ben@potswift.org>",
