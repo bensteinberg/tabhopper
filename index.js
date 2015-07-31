@@ -23,23 +23,38 @@ var hopDownKey = Hotkey({
 });
 
 function hopTabs(direction) {
+    // we get the list of tabs from the window
     var window = require("sdk/windows").browserWindows.activeWindow;
+    // get the hop distance and negate it if necessary
     var hop = require('sdk/simple-prefs').prefs['tabhopperHop'];
     if (direction == "down") {
 	hop = -hop;
     }
+    // make an ordered list of tab IDs
     var positions = [];
-    var flag = false;
     for (let tab of window.tabs) {
 	positions.push(tab.index);
     }
-    var nextTab = positions.indexOf(window.tabs.activeTab.index) + hop;
-    if (nextTab >= positions.length) {
-	nextTab = positions[-1];
-    } else if (nextTab < 0) {
-	nextTab = positions[0];
+    // calculate the next tab position
+    var nextTabPosition = positions.indexOf(window.tabs.activeTab.index) + hop;
+    if (nextTabPosition >= positions.length) {
+	nextTabPosition = positions.length - 1;
+    } else if (nextTabPosition < 0) {
+	nextTabPosition = 0;
     }
-    window.tabs[nextTab].activate();
+
+    // does it make a difference which of these we use?
+    //window.tabs[positions[nextTabPosition]].activate();
+    // or:
+    // iterate over tabs and activate the one at the right position
+    var counter = 0;
+    for (let tab of window.tabs) {
+    	if (counter == nextTabPosition) {
+    	    tab.activate();
+    	    return;
+    	}
+    	counter++;
+    }
 }
 
 exports.hopTabs = hopTabs;

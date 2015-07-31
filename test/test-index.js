@@ -104,7 +104,6 @@ exports["test main hop"] = function(assert, done) {
 		assert.ok(window.tabs.activeTab.index == newidx, "we hopped the right distance");
 	    }, 200);
 	}, 200);
-
     }, 400);
     setTimeout(function() {
 	for ( i = number ; i > 0 ; i-- ) {
@@ -149,10 +148,9 @@ exports["test main hop pinned"] = function(assert, done) {
 	    assert.ok(positions[0] == window.tabs.activeTab.index, "Now at first tab");
 	    main.hopTabs("up");
 	    setTimeout(function() {
-	    	assert.ok(window.tabs.activeTab.index == positions[hop], "we hopped the right distance");
+	    	assert.ok(positions[hop] == window.tabs.activeTab.index, "we hopped the right distance");
 	    }, 200);
 	}, 200);
-
     }, 400);
     setTimeout(function() {
 	for ( i = number ; i > 0 ; i-- ) {
